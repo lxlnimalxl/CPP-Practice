@@ -26,6 +26,26 @@ public:
         tail = NewNode;
         length = 1;
     }
+    
+    void append(int data) {
+        Node* newNode = new Node(data);
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+        }
+        else {
+            tail->next = newNode;
+            tail = newNode;
+        }
+        length++;
+    }
+    
+    
+    
+    
+    
+    
+    
     void display() {
         Node* ptr = head;
         while (ptr != NULL)
