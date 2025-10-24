@@ -35,6 +35,16 @@ public:
         }
         cout << endl;
     }
+
+
+    ~LinkedList() {
+        Node* temp = head;
+        while (head) {
+            head = head->next;
+            delete temp;
+            temp = head;
+        }
+    }
 };
 
 
