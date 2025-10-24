@@ -6,7 +6,7 @@ public:
     int data;
     Node* next;
     Node(int data) {
-        this->data = data;
+        this->data = data; // (int d) ----> data = d; another equal code 
         next = NULL;
     }
 
