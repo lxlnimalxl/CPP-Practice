@@ -39,6 +39,26 @@ public:
         }
         length++;
     }
+
+    void deleteLast() {
+        if (length == 0) return;
+        Node* pre = head;
+        Node* temp = head;
+        while (temp->next) {
+            pre = temp;
+            temp = temp->next;
+        }
+        tail = pre;
+        tail->next = NULL;
+        length--;
+        if (length == 0) {
+            head = NULL;
+            tail = NULL;
+        }
+        delete temp;
+    }
+
+    //10
     
     
     
