@@ -78,6 +78,22 @@ public:
         }
         length++;
     }
+
+
+
+    void deletefirst() {
+        if (length == 0) return;
+        Node* tmp = head;
+        if (length == 1) {
+            head = NULL;
+            tail = NULL;
+        }
+        else {
+            head = head->next;
+        }
+        delete tmp;
+        length--;
+    }
     
     
     
