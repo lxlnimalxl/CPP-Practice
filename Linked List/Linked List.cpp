@@ -64,10 +64,20 @@ public:
 
     }
 
-    //10
+        
     
-    
-    
+    void prepend(int data) {
+        Node* newNode = new Node(data);
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+        }
+        else {
+            newNode->next = head;
+            head = newNode;
+        }
+        length++;
+    }
     
     
     
