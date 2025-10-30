@@ -42,20 +42,26 @@ public:
 
     void deleteLast() {
         if (length == 0) return;
-        Node* pre = head;
         Node* temp = head;
-        while (temp->next) {
-            pre = temp;
-            temp = temp->next;
-        }
-        tail = pre;
-        tail->next = NULL;
-        length--;
+        
         if (length == 0) {
             head = NULL;
             tail = NULL;
         }
+        else {
+            Node* pre = head;
+            while (temp->next) {
+                pre = temp;
+                temp = temp->next;
+            }
+            tail = pre;
+            tail->next = NULL;
+        }
+
         delete temp;
+
+        length--;
+
     }
 
     //10
