@@ -117,6 +117,27 @@ public:
         }
         return false;
     }
+
+
+    bool insert(int index, int data) {
+        if (index < 0 || index > length) {
+            return false;
+        }
+        if (length == 0) {
+            prepend(data);
+            return true;
+        }
+        if (index == length) {
+            append(data);
+            return true;
+        }
+        Node* newNode = new Node(data);
+        Node* tmp = get(index - 1);
+        newNode->next = tmp->next;
+        tmp->next = newNode;
+        length++;
+        return true;
+    }
     
     
     
