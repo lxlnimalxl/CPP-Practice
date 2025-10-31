@@ -123,7 +123,7 @@ public:
         if (index < 0 || index > length) {
             return false;
         }
-        if (length == 0) {
+        if (index == 0) {
             prepend(data);
             return true;
         }
@@ -138,6 +138,27 @@ public:
         length++;
         return true;
     }
+
+
+
+    void deleteNode(int index) {
+        if (index < 0 || index >= length) {
+            return;
+        }
+        if (index == 0) {
+            return deletefirst();
+        }
+        if (index == length - 1) {
+            return deleteLast();
+        }
+        Node* pre = get(index - 1);
+        Node* tmp = pre->next;
+        pre->next = tmp->next;
+        delete tmp;
+        length--;
+    }
+
+
     
     
     
