@@ -102,7 +102,7 @@ public:
             return NULL;
         }
         Node* tmp = head;
-        for (int i = 0; i < index; i++) {
+        for (int i = 0; i < index; ++i) {
             tmp = tmp->next;
         }
         return tmp;
@@ -158,7 +158,19 @@ public:
         length--;
     }
 
-
+    void reverse() {
+        Node* tmp = head;
+        head = tail;
+        tail = tmp;
+        Node* after = tmp->next;
+        Node* before = NULL;
+        for (int i = 0; i < length; i++) {
+            after = tmp->next;
+            tmp->next = before;
+            before = tmp;
+            tmp = after;
+        }
+    }
     
     
     
