@@ -108,6 +108,15 @@ public:
         return tmp;
     }
     
+
+    bool set(int index, int data) {
+        Node* tmp = get(index);
+        if (tmp) {
+            tmp->data = data;
+            return true;
+        }
+        return false;
+    }
     
     
     
