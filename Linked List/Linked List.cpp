@@ -94,6 +94,19 @@ public:
         delete tmp;
         length--;
     }
+
+
+
+    Node* get(int index) {
+        if (index < 0 || index >= length) {
+            return NULL;
+        }
+        Node* tmp = head;
+        for (int i = 0; i < index; i++) {
+            tmp = tmp->next;
+        }
+        return tmp;
+    }
     
     
     
