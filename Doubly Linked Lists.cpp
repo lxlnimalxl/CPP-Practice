@@ -80,6 +80,23 @@ public:
         }
         length++;
     }
+
+    void deleteFirst() {
+        if (length == 0) {
+            return;
+        }
+        Node* tmp = head;
+        if (length == 1) {
+            head = NULL;
+            tail = NULL;
+        }
+        else {
+            head = head->next;
+            head->pre = NULL;
+        }
+        delete tmp;
+        length--;
+    }
 };
 
 
