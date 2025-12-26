@@ -48,6 +48,21 @@ public:
             }
         }
     }
+
+
+    bool contains(int value){
+        Node* tmp = root;
+        while(tmp){
+            if(value < tmp->value){
+                tmp = tmp->left
+            }else if(value > tmp->value){
+                tmp = tmp->right;
+            }else{
+                return true;
+            }
+        }
+        return false;
+    }
 };
 
 
